@@ -11,6 +11,7 @@ public class Variable2 {
 		System.out.println(b);
 		System.out.println(k);
 		
+		//byte
 		byte x=50;
 		byte y=10;
 		int l = x+y;
@@ -18,6 +19,7 @@ public class Variable2 {
 		double d = 456.988888888;
 		System.out.println(d);
 		
+		//scientific number
 		float f1 = 35e6f;
 		double d1 = 12E4d;
 		System.out.println(f1);
