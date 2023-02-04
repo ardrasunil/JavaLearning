@@ -16,6 +16,10 @@ public class FunOperator {
 		String c = a + b;
 		System.out.println(c);
 		
+		//generate random numbers bw 1 to 100
+		int randomNum = (int)(Math.random() * 101);
+		System.out.println(randomNum);
+
 		
 		
 		
