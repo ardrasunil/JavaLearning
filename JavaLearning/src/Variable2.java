@@ -18,6 +18,11 @@ public class Variable2 {
 		double d = 456.988888888;
 		System.out.println(d);
 		
+		float f1 = 35e6f;
+		double d1 = 12E4d;
+		System.out.println(f1);
+		System.out.println(d1);
+		
 		}
 
 
