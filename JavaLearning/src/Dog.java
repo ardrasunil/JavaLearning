@@ -49,8 +49,9 @@ public class Dog {
 		//without passing parameters
 		Dog dog2 = new Dog();
 		
-		
+		System.out.println("Dog 1 Details:");
 		dog1.dispDetails();
+		System.out.println("Dog 2 Details:");
 		dog2.dispDetails();
 	}
 
