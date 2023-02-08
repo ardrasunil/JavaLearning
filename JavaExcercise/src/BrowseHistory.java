@@ -5,6 +5,7 @@ class Browser{
 	
 	//array to store the 
 	private static String[] history;
+	Scanner sc = new Scanner(System.in);
 	
 	//empty constructor
 	Browser(){
@@ -15,14 +16,15 @@ class Browser{
 	//Parameterized Constructor
 	Browser(String[] history){
 		
-		this.history = history;
+		this.history = setHistory(history);
+		
 		
 	}
 	
 	//method to set history
 	public  void setHistory() {
 		
-		Scanner sc = new Scanner(System.in);
+		
 		//read no of url to add 
 		System.out.println("Enter the no.of urls:");
 		int n = sc.nextInt();
@@ -36,6 +38,21 @@ class Browser{
 		
 	}
 	
+	//method to set history if prev hist is passed
+	public  String[] setHistory(String[] history) {
+		// read the prev history size
+		int n = history.length;
+		System.out.println("No.of urls to be added more");
+		int m = sc.nextInt();
+		String[] temp_url = new String[n+m];
+		System.arraycopy(history, 0, temp_url, 0, n);
+		System.out.println("enter the url");
+		for(int i=n;i<(n+m);i++) {
+			temp_url[i] = sc.next();
+		}
+ 		return temp_url;
+	}
+	
 	//to get the history details
 	public static void dispHistory() {
 		System.out.println(Arrays.toString(history));
@@ -46,11 +63,11 @@ class Browser{
 public class BrowseHistory {
 	
 	public static void main(String[] args) {
-		
+		/*
 		//call empty constructor
 		Browser br1 = new Browser();
 		System.out.println("history of browser 1");
-		br1.dispHistory();
+		br1.dispHistory();*/
 		
 		//call parameterized
 		String[] history = {"github.com","youtube.com","zoho.com","whatsapp.com","javatpoint.com"};
