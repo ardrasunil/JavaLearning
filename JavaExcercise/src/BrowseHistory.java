@@ -63,11 +63,11 @@ class Browser{
 public class BrowseHistory {
 	
 	public static void main(String[] args) {
-		/*
+		
 		//call empty constructor
 		Browser br1 = new Browser();
 		System.out.println("history of browser 1");
-		br1.dispHistory();*/
+		br1.dispHistory();
 		
 		//call parameterized
 		String[] history = {"github.com","youtube.com","zoho.com","whatsapp.com","javatpoint.com"};
