@@ -8,7 +8,7 @@ class Browser{
 	
 	//empty constructor
 	Browser(){
-		setHistory1();
+		setHistory();
 
 	}
 	
@@ -16,10 +16,11 @@ class Browser{
 	Browser(String[] history){
 		
 		this.history = history;
+		
 	}
 	
 	//method to set history
-	public  void setHistory1() {
+	public  void setHistory() {
 		
 		Scanner sc = new Scanner(System.in);
 		//read no of url to add 
