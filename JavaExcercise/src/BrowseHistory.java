@@ -16,7 +16,14 @@ class Browser{
 	//Parameterized Constructor
 	Browser(String[] history){
 		
-		this.history = setHistory(history);
+		this.history =history;
+		boolean status;
+		System.out.println("want to browse more(true/false)");
+		status = sc.nextBoolean();
+		if(status) {
+			this.history = setHistory(history);
+			
+		}
 		
 		
 	}
@@ -55,7 +62,7 @@ class Browser{
 	
 	//to get the history details
 	public static void dispHistory() {
-		System.out.println(Arrays.toString(history));
+		System.out.println(Arrays.toString(history)+"\n");
 		
 	}
 }
@@ -65,11 +72,13 @@ public class BrowseHistory {
 	public static void main(String[] args) {
 		
 		//call empty constructor
+		System.out.println("Browser 1:");
 		Browser br1 = new Browser();
 		System.out.println("history of browser 1");
 		br1.dispHistory();
 		
 		//call parameterized
+		System.out.println("Browser 2:");
 		String[] history = {"github.com","youtube.com","zoho.com","whatsapp.com","javatpoint.com"};
 		Browser br2 = new Browser(history);
 		System.out.println("history of browser 2");
