@@ -16,14 +16,7 @@ class Browser{
 	//Parameterized Constructor
 	Browser(String[] history){
 		
-		this.history =history;
-		boolean status;
-		System.out.println("want to browse more(true/false)");
-		status = sc.nextBoolean();
-		if(status) {
-			this.history = setHistory(history);
-			
-		}
+		this.history =setHistory(history);
 		
 		
 	}
@@ -47,12 +40,15 @@ class Browser{
 	
 	//method to set history if prev hist is passed
 	public  String[] setHistory(String[] history) {
+		
 		// read the prev history size
 		int n = history.length;
 		System.out.println("No.of urls to be added more");
 		int m = sc.nextInt();
 		String[] temp_url = new String[n+m];
 		System.arraycopy(history, 0, temp_url, 0, n);
+		
+		//read the urls
 		System.out.println("enter the url");
 		for(int i=n;i<(n+m);i++) {
 			temp_url[i] = sc.next();
