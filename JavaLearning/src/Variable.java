@@ -1,4 +1,4 @@
-
+import java.util.*;
 public class Variable {
 	static int m=100;//static variable
 	static void method()
@@ -20,6 +20,13 @@ public class Variable {
 	System.out.println(c);
 	System.out.println(Bool);
 	System.out.println(Text);
+	
+	
+	String[] song = new String[] {"a","b","c"};
+	int k = song.length;
+	System.out.println(k);
+	
+	
 	}
 
 

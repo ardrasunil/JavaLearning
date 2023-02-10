@@ -17,8 +17,6 @@ class Browser{
 	Browser(String[] history){
 		
 		this.history =setHistory(history);
-		
-		
 	}
 	
 	//method to set history
