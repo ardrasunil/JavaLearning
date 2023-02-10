@@ -181,6 +181,8 @@ public class BrowserMenu {
 						int position = sc.nextInt();
 						System.out.println("Url at "+position+" is "+br1.dispUrl(position));
 						break;
+				default:
+						System.out.println("Invalid Choice.Please make a valid choice");
 						
 			}
 		System.out.println("Do you want to continue(true/false)");
