@@ -23,7 +23,8 @@ class Browser{
 	
 	//to add URL
 	public void addHistory(String newUrl) {
-		
+	
+		checkDuplicate(newUrl);
 		int lenHistory = Browser.history.length;
 		//System.out.println(lenHistory);
 		//creating temp array
@@ -82,6 +83,12 @@ class Browser{
 		return history[position];
 	}
 	
+	public void checkDuplicate(String newUrl) {
+		int duplicate = searchUrl(newUrl);
+		if(duplicate>-1) {
+			deleteHistory(newUrl);
+		}
+	}
 	//to get the history details
 	public static void dispHistory() {
 		System.out.println(Arrays.toString(history)+"\n");
