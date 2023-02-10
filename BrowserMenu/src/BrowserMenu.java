@@ -64,25 +64,17 @@ class Browser{
 	}
 	
 	//to search URL
-	public void searchUrl(String findUrl) {
-		boolean flag = false;
+	public int searchUrl(String findUrl) {
 		int index = -1;
 		int lenHistory = Browser.history.length;
 		for(int i =0;i<lenHistory;i++) {
 			if(Objects.equals(Browser.history[i], findUrl)) {
-				flag = true;
-				index=i;
+				index = i;
 				break;
 			}
 		}
-		if(flag)
-		{
-			System.out.println("URL found at position "+index);
-		}
-		else
-		{
-			System.out.println("URL not found");
-		}
+		
+		return index;
 	}
 	
 	//to get Url @ given position
@@ -165,8 +157,17 @@ public class BrowserMenu {
 				case 4: // search Url
 						System.out.println("Enter the url to be searched:");
 						String findUrl = sc.next();
-						br1.searchUrl(findUrl);
+						int found=br1.searchUrl(findUrl);
+						if(found>-1)
+						{
+							System.out.println("URL found at position "+found);
+						}
+						else
+						{
+							System.out.println("URL not found");
+						}
 						br1.dispHistory();
+						break;
 						
 				case 5: //find URL at given position
 						System.out.println("Enter the position of Url to be read");
