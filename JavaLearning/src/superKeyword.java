@@ -5,7 +5,8 @@ class Animal{
 }
 class Elephant extends Animal{
 	Elephant(){
-		super();
+		//here the super is implicityly created 
+		//super();
 		System.out.println("Elephant is created");
 		
 	}
