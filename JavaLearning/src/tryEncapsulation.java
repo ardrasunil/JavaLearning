@@ -1,3 +1,5 @@
+//sample program to test encapsulation
+
 class Person{
 	private String name;
 	
