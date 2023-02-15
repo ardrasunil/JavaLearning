@@ -6,7 +6,7 @@ class Rectangle implements Drawable{
 public void draw(){System.out.println("drawing rectangle");}  
 }  
   
-class tryInterface2{  
+class Interface2{  
 public static void main(String args[]){  
 Drawable d=new Rectangle();  
 d.draw();  

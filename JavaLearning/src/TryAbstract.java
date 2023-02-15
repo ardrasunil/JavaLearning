@@ -9,7 +9,7 @@ abstract class Car{
  class Maruti extends Car{  
  void run(){System.out.println("running safely..");}  
  }  
- public class tryAbstract {
+ public class TryAbstract {
 	public static void main(String args[]){  
 		  Car obj = new Maruti();  
 		  obj.run();  

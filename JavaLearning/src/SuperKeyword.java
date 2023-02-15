@@ -12,7 +12,7 @@ class Elephant extends Animal{
 	}
 }
 
-public class superKeyword {
+public class SuperKeyword {
 public static void main(String[] args) {
 		
 		Elephant Ramu = new Elephant();

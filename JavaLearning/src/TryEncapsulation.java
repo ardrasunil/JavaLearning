@@ -21,7 +21,7 @@ class Person{
 	
 }
 
-public class tryEncapsulation {
+public class TryEncapsulation {
 	
 	public static void main(String[] args) {
 		

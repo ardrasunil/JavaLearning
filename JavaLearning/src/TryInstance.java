@@ -9,7 +9,7 @@ class Square extends Figures{
 	}
 }
 
-public class tryInstance {
+public class TryInstance {
 
 	public static void main(String[] args) {
 		
