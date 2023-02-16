@@ -286,6 +286,31 @@ public class University {
 					for(Course course :courseList)
 					System.out.println(course.courseTitle);
 					break;
+			case 4: //Print information of a student
+					System.out.println("Enter the student Id");
+					int studId = sc.nextInt();
+					for(Student s :studentList)
+						if(s.studentId == studId) {
+							s.dispDetails();
+						}
+					break;
+			case 5: //Print information of faculty
+					System.out.println("Enter the student Id");
+					int facId = sc.nextInt();
+					for(Faculty f :facultyList)
+						if(f.facultyId == facId) {
+							f.dispDetails();
+						}
+					break;
+			case 6: //Print information of course
+					System.out.println("Enter the Course Name ");
+					String crName = sc.next();
+					for(Course c :courseList)
+						if(Objects.equals(c.courseTitle,crName)) {
+							c.dispDetails();
+						}
+					break;
+			
 			default: System.out.println("Choice Invalid.");
 			}
 		System.out.println("Do you want to make more choices in print(true/false)");
