@@ -191,7 +191,7 @@ public class University {
 		default: System.out.println("Choice Invalid.");
 				
 		}
-		System.out.println("Do you want to make more choices in Delete(true/false)");
+		System.out.println("Do you want to make more choices in add(true/false)");
 		more = sc.nextBoolean();
 		}
 		
@@ -286,13 +286,18 @@ public class University {
 		more = sc.nextBoolean();
 		}
 	}
+	
+	//to update
 	public void update() {
 		
 	}
 	
+	//to search
 	public void search() {
 		
 	}
+	
+	//main 
 	public static void main(String[] args) {
 		
 		University ktu = new University();
@@ -302,7 +307,7 @@ public class University {
 		
 		while(more){
 			
-			
+			System.out.println("WELCOME TO KTU");
 			System.out.println("1 : Add");
 			System.out.println("2 : Delete");
 			System.out.println("3 : Update");
@@ -330,12 +335,12 @@ public class University {
 					ktu.search();
 					break;
 			case 6: System.out.println("Thank You");
+					more = false;
 					break;
 			default: System.out.println("Choice Invalid.");
 			
 			}
-		System.out.println("Do you want to make more choices(true/false)");
-		more = sc.nextBoolean();
+		
 		}
 		
 	}
