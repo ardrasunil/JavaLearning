@@ -266,7 +266,7 @@ public class University {
 			System.out.println("5 : Print the information of a faculty");
 			System.out.println("6 : Print the information of a course");
 			System.out.println("7 : Print the student list and faculty of the course");
-			System.out.println("8 : Print course ");
+			System.out.println("8 : Print course taken by astudent ");
 			System.out.println("Make your choice");
 			choicePrint = sc.nextInt();
 			switch(choicePrint) {
@@ -304,13 +304,26 @@ public class University {
 					break;
 			case 6: //Print information of course
 					System.out.println("Enter the Course Name ");
-					String crName = sc.next();
+					String crName1 = sc.next();
+					System.out.println("Course Details of "+crName1);
 					for(Course c :courseList)
-						if(Objects.equals(c.courseTitle,crName)) {
+						if(Objects.equals(c.courseTitle,crName1)) {
 							c.dispDetails();
 						}
 					break;
-			
+			case 7:	//Print the student list and faculty
+					System.out.println("Enter the Course Name ");
+					String crName2 = sc.next();
+					System.out.println("Faculty for the course"+ crName2);
+					for(Faculty f :facultyList)
+						if(Objects.equals(f.courseName,crName2)) {
+							f.dispDetails();
+						}
+					//add the course of every student and then print student list
+					
+					break;
+					
+			case 8: //Print Courses taken by a student
 			default: System.out.println("Choice Invalid.");
 			}
 		System.out.println("Do you want to make more choices in print(true/false)");
