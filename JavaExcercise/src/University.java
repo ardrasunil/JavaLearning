@@ -88,6 +88,7 @@ class Faculty extends Person{
 	int facultyId;
 	String department;
 	String position;
+	String courseName;
 	
 	Faculty(){
 		
@@ -261,6 +262,11 @@ public class University {
 			System.out.println("1 : Print all students");
 			System.out.println("2 : Print all faculty");
 			System.out.println("3 : Print all course");
+			System.out.println("4 : Print the information of a student");
+			System.out.println("5 : Print the information of a faculty");
+			System.out.println("6 : Print the information of a course");
+			System.out.println("7 : Print the student list and faculty of the course");
+			System.out.println("8 : Print course ");
 			System.out.println("Make your choice");
 			choicePrint = sc.nextInt();
 			switch(choicePrint) {
