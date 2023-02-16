@@ -40,7 +40,7 @@ class Student extends Person{
 	int studentId;
 	double cgpa;
 	String department;
-	Course[] studentCourse;
+	ArrayList<String> courseTaken = new ArrayList();
 	Scanner sc = new Scanner(System.in);
 	
 	Student(){
@@ -76,6 +76,15 @@ class Student extends Person{
 	}
 	
 	//method to register course
+	public void registerCourse() {
+		
+		System.out.println("Enter the Course you want register");
+		String course = sc.next();
+		courseTaken.add(course);
+		
+		
+	}
+	
 	
 	
 	//method to drop course
@@ -118,6 +127,9 @@ class Faculty extends Person{
 		position = sc.next();
 		System.out.println("Enter Department");
 		department = sc.next();
+		System.out.println("Enter Course ");
+		courseName = sc.next();
+		
 		
 		
 	}
@@ -179,7 +191,6 @@ public class University {
 				F.addDetails();
 				//add this object to faculty array
 				facultyList.add(F);
-				
 				
 				break;
 				
@@ -324,6 +335,7 @@ public class University {
 					break;
 					
 			case 8: //Print Courses taken by a student
+					break;
 			default: System.out.println("Choice Invalid.");
 			}
 		System.out.println("Do you want to make more choices in print(true/false)");
@@ -333,6 +345,88 @@ public class University {
 	
 	//to update
 	public void update() {
+		
+		int choiceUpdate;
+		Scanner sc = new Scanner(System.in);
+		boolean more = true;
+		
+		while(more) {
+		System.out.println("1 : Update the cgpa of student ");
+		System.out.println("2 : Update email Id of student");
+		System.out.println("3 : Update email Id of Faculty");
+		System.out.println("4 : Register for a course");
+		System.out.println("5 : Drop a course");
+		System.out.println("Make your choice");
+		choiceUpdate = sc.nextInt();
+		switch(choiceUpdate) {
+			
+		case 1: //Update a student's cgpa
+				System.out.println("Enter the Id of the student to be updated");
+				int studId1 = sc.nextInt();
+				System.out.println("Enter the new CGPA ");
+				double cgpa = sc.nextDouble();
+				for(Student s: studentList)
+				{
+					if(s.studentId==studId1) {
+						s.cgpa = cgpa;
+					}
+				}
+				
+				break;
+		
+		case 2:	//Update email Id of student
+				System.out.println("Enter the Id of the student to be updated");
+				int studId2 =sc.nextInt();
+				System.out.println("Enter the new email id ");
+				String emailId1 = sc.next();
+				for(Student s: studentList)
+				{
+					if(s.studentId==studId2) {
+						s.email = emailId1;
+					}
+				}
+				
+			
+				break;
+				
+		case 3: //Update email Id of faculty
+				System.out.println("Enter the Id of the faculty to be updated");
+				int facId =sc.nextInt();
+				System.out.println("Enter the new email id ");
+				String emailId2 = sc.next();
+				for(Faculty f: facultyList)
+				{
+					if(f.facultyId==facId) {
+						f.email = emailId2;
+					}
+				}
+				
+				break;
+		case 4:// register for a course
+				System.out.println("Enter the Id of the student to be updated");
+				int studId3 =sc.nextInt();
+				
+				System.out.println("Available Courses");
+				for(Course course :courseList)
+					course.dispDetails();
+				
+				for(Student s: studentList)
+				{
+					if(s.studentId==studId3) {
+						s.registerCourse();
+					}
+				}
+				
+				
+				
+				
+		
+		default: System.out.println("Choice Invalid.");
+				
+		}
+		System.out.println("Do you want to make more choices in print(true/false)");
+		more = sc.nextBoolean();	
+	}	
 		
 	}
 	
