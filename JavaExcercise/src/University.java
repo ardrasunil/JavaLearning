@@ -1,193 +1,9 @@
 import java.util.*;
-class Person{
-	
-	String name;
-	String email;
-	
-	
-	Scanner sc = new Scanner(System.in);
-	
-	
-	Person(){
-		
-	}
-	
-	/*Person(String name,String email,String department){
-		this.name = name;
-		this.email = email;
-		this.department = department;
-	}*/
-	
-	public void dispDetails() {
-		
-		System.out.println("Name : "+name);
-		System.out.println("Email : "+email);
-		
-	}
-	public void addDetails() {
-		System.out.println("Enter Name :");
-		name = sc.next();
-		System.out.println("Enter Email :");
-		email = sc.next();
-		
-		
-	}
-}
-
-class Student extends Person{
-	
-	
-	int studentId;
-	double cgpa;
-	String department;
-	ArrayList<String> courseTaken = new ArrayList();
-	Scanner sc = new Scanner(System.in);
-	
-	Student(){
-		
-	}
-	
-	/*Student(String name, String email, String department,int studentId,double cgpa) {
-		super(name, email, department);
-		this.studentId = studentId;
-		this.cgpa = cgpa;
-		
-	}*/
-	
-	@Override public void dispDetails() {
-		System.out.println("Student ID: "+studentId);
-		super.dispDetails();
-		System.out.println("Department : "+department);
-		System.out.println("CGPA : "+cgpa);
-		System.out.print("Courses Opted : ");
-		this.showCourse();
-		
-	}
-	
-	public void showCourse() {
-		
-		for(String s: courseTaken) {
-			System.out.print(s+" ");
-		} 
-		System.out.println();
-	}
-	@Override public void addDetails() {
-		
-		
-		System.out.println("Enter Student Id :");
-		studentId = sc.nextInt();
-		super.addDetails();
-		System.out.println("Enter Department");
-		department = sc.next();
-		System.out.println("Enter Student cgpa");
-		cgpa = sc.nextDouble();
-		
-		
-	}
-	
-	//method to register course
-	public void registerCourse() {
-		boolean more = true;
-		
-		University u = new University();
-		System.out.println("Available Courses");
-		for(Course course :u.courseList)
-			course.dispDetails();
-		
-		while(more) {
-			
-	 	
-			System.out.println("Enter the Course you want register");
-			String course = sc.next();
-			courseTaken.add(course);
-			
-			System.out.println("Do you want to register more courses(true/false");
-			more = sc.nextBoolean();
-		}
-		
-	}
-	
-	//method to drop course
-	public void dropCourse(String drop) {
-		
-		for(String s: courseTaken) {
-			if(Objects.equals(s, drop))
-				courseTaken.remove(s);
-		}
-		
-	}
-	
-}
-class Faculty extends Person{
-	
-	
-	int facultyId;
-	String department;
-	String position;
-	String courseName;
-	
-	Faculty(){
-		
-	}
-	
-	/*Faculty(String name, String email, String department,int facultyId,String position) {
-		super(name, email, department);
-		this.facultyId = facultyId;
-		this.position = position;
-		
-	}*/
-	
-	@Override public void dispDetails() {
-		
-		System.out.println("Faculty Id: "+facultyId);
-		super.dispDetails();
-		System.out.println("Position :"+position);
-		System.out.println("Department :" + department);
-		System.out.println("Courses :"+courseName);
-	}
-	
-	@Override public void addDetails() {
-		
-		
-		System.out.println("Enter Faculty Id :");
-		facultyId = sc.nextInt();
-		super.addDetails();
-		System.out.println("Enter Faculty Position");
-		position = sc.next();
-		System.out.println("Enter Department");
-		department = sc.next();
-		System.out.println("Enter Course ");
-		courseName = sc.next();
-	}
-}
-
-class Course{
-	
-	String courseId;
-	String courseTitle;
-	double credit;
-	
-	Course(String courseId,String courseTitle,double credit){
-		
-		this.courseId = courseId;
-		this.courseTitle = courseTitle;
-		this.credit = credit;
-		
-	}
-	
-	public void dispDetails() {
-		
-		System.out.println(courseId);
-		System.out.println(courseTitle);
-		System.out.println(credit);
-	}
-}
-
 public class University {
 	
 	ArrayList<Student> studentList = new ArrayList<>();
 	ArrayList<Faculty> facultyList = new ArrayList<>();
-	ArrayList<Course> courseList = new ArrayList<>();
+	static ArrayList<Course> courseList = new ArrayList<>();
 	
 	
 	public void add() {
@@ -236,7 +52,7 @@ public class University {
 		default: System.out.println("Choice Invalid.");
 				
 		}
-		System.out.println("Do you want to make more choices in add(true/false)");
+		System.out.println("Do you want to make more choices in ADD(true/false)");
 		more = sc.nextBoolean();
 		}
 		
@@ -293,7 +109,7 @@ public class University {
 		default: System.out.println("Choice Invalid.");
 				
 		}
-		System.out.println("Do you want to make more choices in Delete(true/false)");
+		System.out.println("Do you want to make more choices in DELETE(true/false)");
 		more = sc.nextBoolean();
 		}
 		
@@ -364,6 +180,11 @@ public class University {
 							f.dispDetails();
 						}
 					//add the course of every student and then print student list
+					System.out.println("\n List of Students in "+ crName2);
+					for(Student s :studentList)
+						if(s.courseTaken.contains(crName2)) {
+							System.out.println(s.name);
+						}
 					
 					break;
 					
@@ -371,7 +192,7 @@ public class University {
 					break;
 			default: System.out.println("Choice Invalid.");
 			}
-		System.out.println("Do you want to make more choices in print(true/false)");
+		System.out.println("Do you want to make more choices in PRINT(true/false)");
 		more = sc.nextBoolean();
 		}
 	}
@@ -439,11 +260,6 @@ public class University {
 				System.out.println("Enter the Id of the student to be updated");
 				int studId3 =sc.nextInt();
 				
-				//displaying the details of the course list
-				System.out.println("Available Courses");
-				for(Course course :courseList)
-					course.dispDetails();
-				
 				
 				for(Student s: studentList)
 				{
@@ -461,9 +277,7 @@ public class University {
 					if(s.studentId==studId4) {
 						System.out.println("Currently opted Courses");
 						s.showCourse();
-						System.out.println("Enter the course name you have to drop");
-						String drop = sc.next();
-						s.dropCourse(drop);
+						s.dropCourse();
 					}
 				}
 				break;
@@ -471,7 +285,7 @@ public class University {
 		default: System.out.println("Choice Invalid.");
 				
 		}
-		System.out.println("Do you want to make more choices in print(true/false)");
+		System.out.println("Do you want to make more choices in UPDATE(true/false)");
 		more = sc.nextBoolean();	
 	}	
 		
