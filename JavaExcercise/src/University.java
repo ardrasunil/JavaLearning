@@ -5,7 +5,7 @@ public class University {
 	static ArrayList<Faculty> facultyList = new ArrayList<>();
 	static ArrayList<Course> courseList = new ArrayList<>();
 	
-	
+	//method for different add option
 	public void add() {
 		
 		int choiceAdd;
@@ -114,6 +114,8 @@ public class University {
 		}
 		
 	}
+	
+	//methods for various print options
 	public void printOption() {
 		int choicePrint;
 		Scanner sc = new Scanner(System.in);
@@ -450,7 +452,7 @@ public class University {
 		
 		while(more){
 			
-			System.out.println("WELCOME TO KTU");
+			System.out.println("WELCOME TO KTU UNIVERSITY");
 			System.out.println("1 : Add");
 			System.out.println("2 : Delete");
 			System.out.println("3 : Update");
