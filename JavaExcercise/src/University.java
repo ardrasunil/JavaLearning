@@ -20,8 +20,8 @@ class Person{
 	
 	public void dispDetails() {
 		
-		System.out.println(name);
-		System.out.println(email);
+		System.out.println("Name : "+name);
+		System.out.println("Email : "+email);
 		
 	}
 	public void addDetails() {
@@ -55,12 +55,22 @@ class Student extends Person{
 	}*/
 	
 	@Override public void dispDetails() {
-		System.out.println(studentId);
+		System.out.println("Student ID: "+studentId);
 		super.dispDetails();
-		System.out.println(department);
-		System.out.println(cgpa);
+		System.out.println("Department : "+department);
+		System.out.println("CGPA : "+cgpa);
+		System.out.print("Courses Opted : ");
+		this.showCourse();
+		
 	}
 	
+	public void showCourse() {
+		
+		for(String s: courseTaken) {
+			System.out.print(s+" ");
+		} 
+		System.out.println();
+	}
 	@Override public void addDetails() {
 		
 		
@@ -77,18 +87,28 @@ class Student extends Person{
 	
 	//method to register course
 	public void registerCourse() {
-		
-		System.out.println("Enter the Course you want register");
-		String course = sc.next();
-		courseTaken.add(course);
-		
+		boolean more = true;
+		while(more) {
+	 	
+			System.out.println("Enter the Course you want register");
+			String course = sc.next();
+			courseTaken.add(course);
+			
+			System.out.println("Do you want to register more courses(true/false");
+			more = sc.nextBoolean();
+		}
 		
 	}
 	
-	
-	
 	//method to drop course
-	
+	public void dropCourse(String drop) {
+		
+		for(String s: courseTaken) {
+			if(Objects.equals(s, drop))
+				courseTaken.remove(s);
+		}
+		
+	}
 	
 }
 class Faculty extends Person{
@@ -111,10 +131,12 @@ class Faculty extends Person{
 	}*/
 	
 	@Override public void dispDetails() {
+		
+		System.out.println("Faculty Id: "+facultyId);
 		super.dispDetails();
-		System.out.println(facultyId);
-		System.out.println(position);
-		System.out.println(department);
+		System.out.println("Position :"+position);
+		System.out.println("Department :" + department);
+		System.out.println("Courses :"+courseName);
 	}
 	
 	@Override public void addDetails() {
@@ -129,9 +151,6 @@ class Faculty extends Person{
 		department = sc.next();
 		System.out.println("Enter Course ");
 		courseName = sc.next();
-		
-		
-		
 	}
 }
 
@@ -181,6 +200,11 @@ public class University {
 		case 1: //add a student
 				Student S = new Student();
 				S.addDetails();
+				
+				System.out.println("Do you want to register course(true/false)");
+				boolean reg = sc.nextBoolean();
+				if(reg)
+					S.registerCourse();
 				// add this object to student array
 				studentList.add(S);
 				
@@ -417,10 +441,22 @@ public class University {
 					}
 				}
 				
+				break;
+		case 5: //Drop a course
+				System.out.println("Enter the Id of the student to be updated");
+				int studId4 =sc.nextInt();
+				for(Student s: studentList)
+				{
+					if(s.studentId==studId4) {
+						System.out.println("Currently opted Courses");
+						s.showCourse();
+						System.out.println("Enter the course name you have to drop");
+						String drop = sc.next();
+						s.dropCourse(drop);
+					}
+				}
+				break;
 				
-				
-				
-		
 		default: System.out.println("Choice Invalid.");
 				
 		}
