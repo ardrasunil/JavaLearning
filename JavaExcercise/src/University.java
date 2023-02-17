@@ -301,7 +301,44 @@ public class University {
 	
 	//to search
 	public void search() {
+		int choiceSearch;
+		Scanner sc = new Scanner(System.in);
+		boolean more = true;
 		
+		while(more) {
+			System.out.println("1 : Search a Student ");
+			System.out.println("2 : Search a Faculty");
+			System.out.println("3 : Search a Course");
+			System.out.println("4 : Search whether a student takes a course");
+			System.out.println("5 : Search whether a faculty takes a course");System.out.println("1 : Search a Student ");
+			System.out.println("6 : Search a Courses taken by a Student");
+			System.out.println("7 : Search a Courses taught by a Faculty");
+			System.out.println("Make your choice");
+			choiceSearch = sc.nextInt();
+			switch(choiceSearch) {
+			case 1: //to Search a Student
+					boolean flag = false;
+					Student S = new Student();
+					System.out.println("Enter the Student ID");
+					int studId1 = sc.nextInt();
+					for(Student s:studentList) {
+						if(s.studentId==studId1) {
+							flag = true;
+							S=s;
+						}
+					}
+					if(flag) {
+						System.out.println("Student Found");
+						S.dispDetails();
+					
+					}
+				
+					break;
+			default: System.out.println("Choice Invalid.");
+			}
+			System.out.println("Do you want to make more choices in SEARCH(true/false)");
+			more = sc.nextBoolean();
+		}
 	}
 	
 	//main 
