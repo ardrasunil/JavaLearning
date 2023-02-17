@@ -34,8 +34,9 @@ class Course{
 	
 	public void dispDetails() {
 		
-		System.out.println(courseId);
-		System.out.println(courseTitle);
-		System.out.println(credit);
+		System.out.println("Course Id :" +courseId);
+		System.out.println("Course Name :" +courseTitle);
+		System.out.println("Course Credit : "+credit );
+		System.out.println();
 	}
 }

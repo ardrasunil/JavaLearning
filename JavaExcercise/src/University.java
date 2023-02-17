@@ -74,36 +74,36 @@ public class University {
 		case 1: //Delete a student
 				System.out.println("Enter the Id of the student to be deleted");
 				int studId =sc.nextInt();
-				for(Student s: studentList)
-				{
-					if(s.getStudentId()==studId) {
-						studentList.remove(s);
+				Iterator<Student> itr = studentList.iterator();
+				while(itr.hasNext()) {
+					if(itr.next().getStudentId()==studId) {
+						itr.remove();
 					}
 				}
-				
 				break;
 		
 		case 2:	//Delete a faculty
 				System.out.println("Enter the Id of the faculty to be deleted");
 				int facId =sc.nextInt();
-				for(Faculty f: facultyList)
-				{
-					if(f.getFacultyId()==facId) {
-						facultyList.remove(f);
+				Iterator<Faculty> itr2 = facultyList.iterator();
+				while(itr2.hasNext()) {
+					if(itr2.next().getFacultyId()==facId) {
+						itr2.remove();
 					}
 				}
-			
+				
 				break;
 				
 		case 3: //Delete a course
 				System.out.println("Enter the Id of the course to be deleted");
 				String crId =sc.next();
-				for(Course c: courseList)
-				{
-					if(Objects.equals(crId, c.getCourseId())) {
-						courseList.remove(c);
+				Iterator<Course> itr3 = courseList.iterator();
+				while(itr3.hasNext()) {
+					if(itr3.next().getCourseId().equals(crId)) {
+						itr3.remove();
 					}
 				}
+				
 				
 				break;
 		default: System.out.println("Choice Invalid.");

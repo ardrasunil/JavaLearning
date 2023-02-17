@@ -1,6 +1,9 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Objects;
 import java.util.Scanner;
+import java.util.Arrays;
+
 
 class Student extends Person{
 	
@@ -94,16 +97,18 @@ class Student extends Person{
 	//method to drop course
 	//exception error here
 	//last element not getting deleted
+	//tried with iterator(Collections):resolved
 	public void dropCourse() {
 		System.out.println("Enter the course name you have to drop");
 		String delCourse = sc.next();
 		
-		for(String s:this.courseTaken) {
-			if(Objects.equals(s,delCourse))
-				this.courseTaken.remove(s);
+		Iterator<String> itr = courseTaken.iterator();
+		while(itr.hasNext()) {
+			if(itr.next().equals(delCourse)) {
+				itr.remove();
+				
+			}
 		}
-		
+	
 	}
-	
-	
 }
