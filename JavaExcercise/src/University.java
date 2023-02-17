@@ -416,7 +416,7 @@ public class University {
 						}
 					}
 					if(flag5) {
-						System.out.println("Yes,the student has taken the course :"+ cName3);
+						System.out.println("Yes,the faculty teaches the course :"+ cName3);
 					}
 					else {
 						System.out.println("Faculty not taking the course");
