@@ -1,11 +1,19 @@
 class Faculty extends Person{
 	
 	
-	int facultyId;
+	private int facultyId;
 	String department;
 	String position;
 	String courseName;
 	
+	public int getFacultyId() {
+		return facultyId;
+	}
+
+	public void setFacultyId(int facultyId) {
+		this.facultyId = facultyId;
+	}
+
 	Faculty(){
 		
 	}
@@ -23,7 +31,7 @@ class Faculty extends Person{
 		super.dispDetails();
 		System.out.println("Position :"+position);
 		System.out.println("Department :" + department);
-		System.out.println("Courses :"+courseName);
+		System.out.println("Course Taught by Faculty :"+courseName);
 	}
 	
 	@Override public void addDetails() {
@@ -36,6 +44,10 @@ class Faculty extends Person{
 		position = sc.next();
 		System.out.println("Enter Department");
 		department = sc.next();
+		//University u = new University();
+		System.out.println("Available Courses");
+		for(Course course :University.courseList)
+			course.dispDetails();
 		System.out.println("Enter Course ");
 		courseName = sc.next();
 	}

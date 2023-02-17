@@ -4,11 +4,26 @@ import java.util.Scanner;
 
 class Student extends Person{
 	
-	int studentId;
-	double cgpa;
+	private int studentId;
+	private double cgpa;
 	String department;
 	ArrayList<String> courseTaken = new ArrayList<>();
 	Scanner sc = new Scanner(System.in);
+	
+	
+	public int getStudentId() {
+		return studentId;
+	}
+
+	
+	public double getCgpa() {
+		return cgpa;
+	}
+
+	public void setCgpa(double cgpa) {
+		this.cgpa = cgpa;
+	}
+
 	
 	Student(){
 		
@@ -67,6 +82,7 @@ class Student extends Person{
 			System.out.println("Enter the Course you want register");
 			String course = sc.next();
 			courseTaken.add(course);
+				
 			
 			System.out.println("Do you want to register more courses(true/false");
 			more = sc.nextBoolean();
@@ -74,14 +90,16 @@ class Student extends Person{
 		
 	}
 	
+	//not working
 	//method to drop course
 	//exception error here
+	//last element not getting deleted
 	public void dropCourse() {
 		System.out.println("Enter the course name you have to drop");
-		String delCourse = sc.nextLine();
+		String delCourse = sc.next();
 		
 		for(String s:this.courseTaken) {
-			if(Objects.equals(s, delCourse))
+			if(Objects.equals(s,delCourse))
 				this.courseTaken.remove(s);
 		}
 		

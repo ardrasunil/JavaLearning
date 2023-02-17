@@ -1,8 +1,28 @@
 class Course{
 	
-	String courseId;
-	String courseTitle;
-	double credit;
+	private String courseId;
+	private String courseTitle;
+	private double credit;
+	
+	public String getCourseId() {
+		return courseId;
+	}
+
+
+	public String getCourseTitle() {
+		return courseTitle;
+	}
+
+	
+
+	public double getCredit() {
+		return credit;
+	}
+
+	
+	Course(){
+		
+	}
 	
 	Course(String courseId,String courseTitle,double credit){
 		

@@ -1,10 +1,23 @@
 import java.util.Scanner;
 class Person{
 	
-	String name;
-	String email;
+	private String name;
+	private String email;
 	Scanner sc = new Scanner(System.in);
 	
+	public String getName() {
+		return name;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	Person(){
 		
 	}

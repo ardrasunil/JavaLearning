@@ -76,7 +76,7 @@ public class University {
 				int studId =sc.nextInt();
 				for(Student s: studentList)
 				{
-					if(s.studentId==studId) {
+					if(s.getStudentId()==studId) {
 						studentList.remove(s);
 					}
 				}
@@ -88,7 +88,7 @@ public class University {
 				int facId =sc.nextInt();
 				for(Faculty f: facultyList)
 				{
-					if(f.facultyId==facId) {
+					if(f.getFacultyId()==facId) {
 						facultyList.remove(f);
 					}
 				}
@@ -100,7 +100,7 @@ public class University {
 				String crId =sc.next();
 				for(Course c: courseList)
 				{
-					if(Objects.equals(crId, c.courseId)) {
+					if(Objects.equals(crId, c.getCourseId())) {
 						courseList.remove(c);
 					}
 				}
@@ -134,23 +134,23 @@ public class University {
 			case 1: //Print all students
 			 		System.out.println("STUDENT LIST");
 			 		for(Student student :studentList)
-					System.out.println(student.name);
+					System.out.println(student.getName());
 			 		break;
 			case 2:	//Print all faculty
 					System.out.println("FACULTY LIST");
 					for(Faculty faculty :facultyList)
-					System.out.println(faculty.name);
+					System.out.println(faculty.getName());
 					break;
 			case 3: //Print all courses
 					System.out.println("COURSE LIST");
 					for(Course course :courseList)
-					System.out.println(course.courseTitle);
+					System.out.println(course.getCourseTitle());
 					break;
 			case 4: //Print information of a student
 					System.out.println("Enter the student Id");
 					int studId = sc.nextInt();
 					for(Student s :studentList)
-						if(s.studentId == studId) {
+						if(s.getStudentId() == studId) {
 							s.dispDetails();
 						}
 					break;
@@ -158,7 +158,7 @@ public class University {
 					System.out.println("Enter the faculty Id");
 					int facId = sc.nextInt();
 					for(Faculty f :facultyList)
-						if(f.facultyId == facId) {
+						if(f.getFacultyId() == facId) {
 							f.dispDetails();
 						}
 					break;
@@ -167,7 +167,7 @@ public class University {
 					String crName1 = sc.next();
 					System.out.println("Course Details of "+crName1);
 					for(Course c :courseList)
-						if(Objects.equals(c.courseTitle,crName1)) {
+						if(Objects.equals(c.getCourseTitle(),crName1)) {
 							c.dispDetails();
 						}
 					break;
@@ -183,16 +183,16 @@ public class University {
 					System.out.println("\nList of Students in "+ crName2);
 					for(Student s :studentList)
 						if(s.courseTaken.contains(crName2)) {
-							System.out.println(s.name);
+							System.out.println(s.getName());
 						}
 					
 					break;
 					
 			case 8: //Print Courses taken by a student
-					System.out.println("Enter the Id of the student to be updated");
+					System.out.println("Enter the Id of the student ");
 					int studId2 =sc.nextInt();
 					for(Student s:studentList){
-						if(studId2==s.studentId) {
+						if(studId2==s.getStudentId()) {
 							s.showCourse();
 						}
 					}
@@ -229,8 +229,8 @@ public class University {
 				double cgpa = sc.nextDouble();
 				for(Student s: studentList)
 				{
-					if(s.studentId==studId1) {
-						s.cgpa = cgpa;
+					if(s.getStudentId()==studId1) {
+						s.setCgpa(cgpa);
 					}
 				}
 				
@@ -243,8 +243,8 @@ public class University {
 				String emailId1 = sc.next();
 				for(Student s: studentList)
 				{
-					if(s.studentId==studId2) {
-						s.email = emailId1;
+					if(s.getStudentId()==studId2) {
+						s.setEmail(emailId1);
 					}
 				}
 				
@@ -258,8 +258,8 @@ public class University {
 				String emailId2 = sc.next();
 				for(Faculty f: facultyList)
 				{
-					if(f.facultyId==facId) {
-						f.email = emailId2;
+					if(f.getFacultyId()==facId) {
+						f.setEmail(emailId2);
 					}
 				}
 				
@@ -271,7 +271,7 @@ public class University {
 				
 				for(Student s: studentList)
 				{
-					if(s.studentId==studId3) {
+					if(s.getStudentId()==studId3) {
 						s.registerCourse();
 					}
 				}
@@ -282,7 +282,7 @@ public class University {
 				int studId4 =sc.nextInt();
 				for(Student s: studentList)
 				{
-					if(s.studentId==studId4) {
+					if(s.getStudentId()==studId4) {
 						System.out.println("Currently opted Courses");
 						s.showCourse();
 						s.dropCourse();
@@ -310,30 +310,121 @@ public class University {
 			System.out.println("2 : Search a Faculty");
 			System.out.println("3 : Search a Course");
 			System.out.println("4 : Search whether a student takes a course");
-			System.out.println("5 : Search whether a faculty takes a course");System.out.println("1 : Search a Student ");
-			System.out.println("6 : Search a Courses taken by a Student");
-			System.out.println("7 : Search a Courses taught by a Faculty");
+			System.out.println("5 : Search whether a faculty takes a course");
 			System.out.println("Make your choice");
 			choiceSearch = sc.nextInt();
 			switch(choiceSearch) {
 			case 1: //to Search a Student
-					boolean flag = false;
+					boolean flag1 = false;
 					Student S = new Student();
 					System.out.println("Enter the Student ID");
 					int studId1 = sc.nextInt();
 					for(Student s:studentList) {
-						if(s.studentId==studId1) {
-							flag = true;
+						if(s.getStudentId()==studId1) {
+							flag1 = true;
 							S=s;
+							break;
 						}
 					}
-					if(flag) {
-						System.out.println("Student Found");
+					if(flag1) {
+						System.out.println("Student Details Found");
 						S.dispDetails();
-					
+					}
+					else {
+						System.out.println("Student Id invalid");
 					}
 				
 					break;
+					
+			case 2: //to search a faculty
+					boolean flag2 = false;
+					Faculty F = new Faculty();
+					System.out.println("Enter the Faculty ID");
+					int studId2 = sc.nextInt();
+					for(Faculty f:facultyList) {
+						if(f.getFacultyId()==studId2) {
+							flag2 = true;
+							F=f;
+							break;
+						}
+					}
+					if(flag2) {
+						System.out.println("Faculty Details Found");
+						F.dispDetails();
+					}
+					else {
+						System.out.println("Faculty Id invalid");
+					}
+			
+					break;
+			case 3: //to search a faculty
+					boolean flag3 = false;
+					Course C = new Course();
+					System.out.println("Enter the Course Name");
+					String Cname = sc.next();
+					for(Course c:courseList) {
+						if(Objects.equals(Cname, c.getCourseTitle())) {
+							flag3 = true;
+							C=c;
+							break;
+						}
+					}
+					if(flag3) {
+						System.out.println("Course Details Found");
+						C.dispDetails();
+					}
+					else {
+						System.out.println("Course not available");
+					}
+		
+					break;
+					
+			case 4: //
+					boolean flag4 = false;
+					System.out.println("Enter the student Id");
+					int studId3 = sc.nextInt();
+					System.out.println("Enter the Course you want to search");
+					String cName2 = sc.next();
+					for(Student s : studentList) {
+						if(s.getStudentId() == studId3) {
+							if(s.courseTaken.contains(cName2)) {
+								flag4 = true;
+								break;
+							}
+						}
+					}
+					if(flag4) {
+						System.out.println("Yes,the student has taken the course :"+ cName2);
+					}
+					else {
+						System.out.println("Student not taken the course");
+					}
+					break;
+					
+			case 5: //
+					boolean flag5 = false;
+					System.out.println("Enter the faculty Id");
+					int facId = sc.nextInt();
+					System.out.println("Enter the Course you want to search");
+					String cName3 = sc.next();
+					for(Faculty f : facultyList) {
+						if(f.getFacultyId() == facId) {
+							if(Objects.equals(cName3, f.courseName)) {
+								flag5 = true;
+								break;
+							}
+						}
+					}
+					if(flag5) {
+						System.out.println("Yes,the student has taken the course :"+ cName3);
+					}
+					else {
+						System.out.println("Faculty not taking the course");
+					}
+					break;
+					
+			
+				
 			default: System.out.println("Choice Invalid.");
 			}
 			System.out.println("Do you want to make more choices in SEARCH(true/false)");
