@@ -1,8 +1,8 @@
 import java.util.*;
 public class University {
 	
-	ArrayList<Student> studentList = new ArrayList<>();
-	ArrayList<Faculty> facultyList = new ArrayList<>();
+	static ArrayList<Student> studentList = new ArrayList<>();
+	static ArrayList<Faculty> facultyList = new ArrayList<>();
 	static ArrayList<Course> courseList = new ArrayList<>();
 	
 	
@@ -126,7 +126,7 @@ public class University {
 			System.out.println("5 : Print the information of a faculty");
 			System.out.println("6 : Print the information of a course");
 			System.out.println("7 : Print the student list and faculty of the course");
-			System.out.println("8 : Print course taken by astudent ");
+			System.out.println("8 : Print course taken by a student ");
 			System.out.println("Make your choice");
 			choicePrint = sc.nextInt();
 			switch(choicePrint) {
@@ -155,7 +155,7 @@ public class University {
 						}
 					break;
 			case 5: //Print information of faculty
-					System.out.println("Enter the student Id");
+					System.out.println("Enter the faculty Id");
 					int facId = sc.nextInt();
 					for(Faculty f :facultyList)
 						if(f.facultyId == facId) {
@@ -174,13 +174,13 @@ public class University {
 			case 7:	//Print the student list and faculty
 					System.out.println("Enter the Course Name ");
 					String crName2 = sc.next();
-					System.out.println("Faculty for the course"+ crName2);
+					System.out.println("Faculty for "+ crName2);
 					for(Faculty f :facultyList)
 						if(Objects.equals(f.courseName,crName2)) {
 							f.dispDetails();
 						}
 					//add the course of every student and then print student list
-					System.out.println("\n List of Students in "+ crName2);
+					System.out.println("\nList of Students in "+ crName2);
 					for(Student s :studentList)
 						if(s.courseTaken.contains(crName2)) {
 							System.out.println(s.name);
@@ -189,6 +189,14 @@ public class University {
 					break;
 					
 			case 8: //Print Courses taken by a student
+					System.out.println("Enter the Id of the student to be updated");
+					int studId2 =sc.nextInt();
+					for(Student s:studentList){
+						if(studId2==s.studentId) {
+							s.showCourse();
+						}
+					}
+					
 					break;
 			default: System.out.println("Choice Invalid.");
 			}
@@ -298,6 +306,14 @@ public class University {
 	
 	//main 
 	public static void main(String[] args) {
+		Course c1 = new Course("ECT1","MAA",4);
+		Course c2 = new Course("ECT2","DSD",3);
+		Course c3 = new Course("ECT3","ML",3);
+		Course c4 = new Course("ECT4","RTOS",4);
+		courseList.add(c1);
+		courseList.add(c2);
+		courseList.add(c3);
+		courseList.add(c4);
 		
 		University ktu = new University();
 		boolean more = true;
