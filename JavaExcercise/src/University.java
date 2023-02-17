@@ -88,7 +88,14 @@ class Student extends Person{
 	//method to register course
 	public void registerCourse() {
 		boolean more = true;
+		
+		University u = new University();
+		System.out.println("Available Courses");
+		for(Course course :u.courseList)
+			course.dispDetails();
+		
 		while(more) {
+			
 	 	
 			System.out.println("Enter the Course you want register");
 			String course = sc.next();
@@ -224,6 +231,8 @@ public class University {
 				System.out.println("Enter credits :");
 				Course C = new Course(sc.next(),sc.next(),sc.nextDouble());
 				courseList.add(C);
+				break;
+				
 		default: System.out.println("Choice Invalid.");
 				
 		}
@@ -430,9 +439,11 @@ public class University {
 				System.out.println("Enter the Id of the student to be updated");
 				int studId3 =sc.nextInt();
 				
+				//displaying the details of the course list
 				System.out.println("Available Courses");
 				for(Course course :courseList)
 					course.dispDetails();
+				
 				
 				for(Student s: studentList)
 				{
