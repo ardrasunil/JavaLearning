@@ -68,7 +68,7 @@ public class GoogleChrome extends Browser {
 			default:System.out.println("Invalid choice");
 				
 			}
-		System.out.println("Do you want to continue (true/false)");
+		System.out.println("Do you want to set any more access (true/false)");
 		more = sc.nextBoolean();
 		}
 		
@@ -84,8 +84,26 @@ public class GoogleChrome extends Browser {
 	//to print access permision
 	void showAccessPermission() {
 		System.out.println("ACCESS PERMISSION");
-		System.out.println("Location : "+this.isLocationAccessible);
-		System.out.println("Camera : "+this.isCameraAccessible);
-		System.out.println("Microphone : "+this.isMicrophoneAccessible);
+		if(isLocationAccessible) {
+			System.out.println("Location : ON");
+		}
+		else
+		{
+			System.out.println("Location : OFF");
+		}
+		if(isCameraAccessible) {
+			System.out.println("Camera : ON");
+		}
+		else
+		{
+			System.out.println("Camera : OFF");
+		}
+		if(isMicrophoneAccessible) {
+			System.out.println("Microphone : ON");
+		}
+		else
+		{
+			System.out.println("Microphone : OFF");
+		}
 	}
 }

@@ -1,4 +1,6 @@
 
+import java.util.Arrays;
+
 public class TestClass {
 	public static void main(String[] args) {
 		
@@ -16,7 +18,7 @@ public class TestClass {
 		
 		
 		
-		System.out.println("\t\tGOOGLE CHROME TAB");
+		System.out.println("\t\tGOOGLE CHROME BROWSER");
 		GoogleChrome chromeNewTab = new GoogleChrome();
 		
 		//Step 4:to get the version of Google Chrome
@@ -48,5 +50,21 @@ public class TestClass {
 			}
 		}
 		System.out.println("\nNo. of Google Chrome Tabs : "+countChromeTabs);
+		
+		//Step 6: to add an interface for Firefox
+		System.out.println("\n\t\tFIREFOX BROWSER");
+		Browser browser= new Firefox();
+		Firefox browser1 = (Firefox) browser;
+		browser1.addContainer("facebookContainer");
+		browser1.addContainer("Mails"); 
+		browser1.addContainer("PrivateBrowsing");
+		
+		String[] containers = browser1.viewAllContainers();
+		System.out.println("Container after adding");
+		System.out.println(Arrays.toString(containers));
+		browser1.leaveContainer("PrivateBrowsing"); 
+		containers = browser1.viewAllContainers(); 
+		System.out.println("Container after deleting");
+		System.out.println(Arrays.toString(containers));
 	}
 }
