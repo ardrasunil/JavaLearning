@@ -59,6 +59,7 @@ class Browser{
 		
 	}
 	
+	
 	//to get the history details
 	public static void dispHistory() {
 		System.out.println(Arrays.toString(history)+"\n");

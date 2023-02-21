@@ -1,5 +1,5 @@
 
-public class Firefox extends Browser{
+public class Firefox extends Browser implements MultipleAccountContainers{
 	
 	//empty constructor
 	Firefox(){
@@ -18,4 +18,14 @@ public class Firefox extends Browser{
 		System.out.println("I am Firefox\n");
 	}
 
+
+	public void addContainer(String container) {
+		
+		
+	}
+
+	public void leaveContainer(String container) {
+		
+		
+	}
 }
