@@ -10,14 +10,14 @@ class Browser{
 	
 	//empty constructor
 	Browser(){
-		setHistory();
+		
 
 	}
 	
 	//Parameterized Constructor
 	Browser(String[] history){
 		
-		Browser.history =setHistory(history);
+		Browser.history =history;
 	}
 	
 	//method to set history
@@ -42,7 +42,8 @@ class Browser{
 		
 		// read the prev history size
 		int n = history.length;
-		System.out.println("Want to add more urls? if yes enter the number else enter 0");
+		System.out.println("Want to add more urls?");
+		System.out.println("if Yes, enter the no.of urls else enter 0.");
 		int m = sc.nextInt();
 		String[] temp_url = new String[n+m];
 		System.arraycopy(history, 0, temp_url, 0, n);
