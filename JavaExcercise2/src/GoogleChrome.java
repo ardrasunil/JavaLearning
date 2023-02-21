@@ -7,6 +7,15 @@ public class GoogleChrome extends Browser {
 	boolean isMicrophoneAccessible = false;
 	Scanner sc = new Scanner(System.in);
 	
+	private static final double versionNumber;
+	static {
+		versionNumber = 1.0;
+	}
+	
+	public static double getVersionnumber() {
+		return versionNumber;
+	}
+
 	//empty constructor
 	GoogleChrome(){
 		//super();
