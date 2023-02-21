@@ -42,22 +42,30 @@ class Browser{
 		
 		// read the prev history size
 		int n = history.length;
-		System.out.println("No.of urls to be added more");
+		System.out.println("Want to add more urls? if yes enter the number else enter 0");
 		int m = sc.nextInt();
 		String[] temp_url = new String[n+m];
 		System.arraycopy(history, 0, temp_url, 0, n);
 		
 		//read the urls
-		System.out.println("enter the url");
-		for(int i=n;i<(n+m);i++) {
-			temp_url[i] = sc.next();
+		if(m>0) {
+			System.out.println("enter the url");
+			for(int i=n;i<(n+m);i++) {
+				temp_url[i] = sc.next();
+			}
 		}
- 		return temp_url;
+			return temp_url;
+		
 	}
 	
 	//to get the history details
 	public static void dispHistory() {
 		System.out.println(Arrays.toString(history)+"\n");
 		
+	}
+	
+	//method to print who am I
+	public void whoAmI() {
+		System.out.println("I am a browser\n");
 	}
 }
