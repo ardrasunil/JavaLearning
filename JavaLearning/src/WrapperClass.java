@@ -40,7 +40,7 @@ public class WrapperClass {
 		System.out.println(newS);
 		System.out.println(newI);
 		
-		//parse.Int(): to convert string to int using Integer wrapper class
+		//intObj.parseInt(): to convert string to int using Integer wrapper class
 		String str = "14";
 		System.out.println("Multiplying a String value : " +2*Integer.parseInt(str));
 		
@@ -49,6 +49,18 @@ public class WrapperClass {
 		System.out.println(value);
 		Boolean value1 = Boolean.valueOf("False");
 		System.out.println(value1);
+		
+		//floatObj.intValue():float to int conversion
+		Float float1 = Float.valueOf(67.98f);
+		int floatToInt = float1.intValue();
+		System.out.println("converted float 67.98 to int :"+floatToInt);
+		
+		//binary to integer
+		//also use parseInt()
+		Integer binary = Integer.valueOf("100", 2);
+		System.out.println(binary);
 	}
+	
+	
 
 }

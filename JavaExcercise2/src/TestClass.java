@@ -50,6 +50,7 @@ public class TestClass {
 			}
 		}
 		System.out.println("\nNo. of Google Chrome Tabs : "+countChromeTabs);
+		System.out.println("No. of Opened Tabs : "+br.getCountTabsOpened(allBrowsers));
 		
 		//Step 6: to add an interface for Firefox
 		System.out.println("\n\t\tFIREFOX BROWSER");

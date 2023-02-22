@@ -7,6 +7,7 @@ class Browser{
 	//array to store the 
 	private static String[] history;
 	Scanner sc = new Scanner(System.in);
+	int noOfTabsOpened;
 	
 	//empty constructor
 	Browser(){
@@ -69,5 +70,15 @@ class Browser{
 	//method to print who am I
 	public void whoAmI() {
 		System.out.println("I am a browser\n");
+	}
+	
+	//exercise 3:wrapper class
+	//to get the number of tabs opened
+	public int getCountTabsOpened(Browser[] allTabs) {
+		noOfTabsOpened = allTabs.length;
+		Integer countTabs = noOfTabsOpened; //autoboxing
+		
+		//unboxing
+		return countTabs.intValue();
 	}
 }
