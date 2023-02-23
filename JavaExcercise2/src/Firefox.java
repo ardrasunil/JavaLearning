@@ -67,11 +67,12 @@ public class Firefox extends Browser implements MultipleAccountContainers{
 		
 	}
 	
+	//to get the no.of firefox tabs
 	public int getCountOfTabsOpened(Browser[] allTabs) {
 		int length = allTabs.length;
 		int countFirefoxTabs = 0;
 		for(int i =0;i<length;i++) {
-			if(allTabs[i] instanceof GoogleChrome) {
+			if(allTabs[i] instanceof Firefox) {
 				countFirefoxTabs+=1;
 			}
 		}
