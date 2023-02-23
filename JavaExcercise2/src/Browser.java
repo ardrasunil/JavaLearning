@@ -74,7 +74,7 @@ class Browser{
 	
 	//exercise 3:wrapper class
 	//to get the number of tabs opened
-	public int getCountTabsOpened(Browser[] allTabs) {
+	public int getCountOfTabsOpened(Browser[] allTabs) {
 		noOfTabsOpened = allTabs.length;
 		Integer countTabs = noOfTabsOpened; //autoboxing
 		

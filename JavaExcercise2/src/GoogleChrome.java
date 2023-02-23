@@ -104,6 +104,21 @@ public class GoogleChrome extends Browser {
 		else
 		{
 			System.out.println("Microphone : OFF");
+	
+		
 		}
+
+	}
+	
+	//to get no of chrome tabs
+	public int getCountOfTabsOpened(Browser[] allTabs) {
+		int length = allTabs.length;
+		int countChromeTabs = 0;
+		for(int i =0;i<length;i++) {
+			if(allTabs[i] instanceof GoogleChrome) {
+				countChromeTabs+=1;
+			}
+		}
+		return countChromeTabs;
 	}
 }

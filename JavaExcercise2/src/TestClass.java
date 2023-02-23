@@ -12,8 +12,7 @@ public class TestClass {
 		Browser browserOne = new GoogleChrome();
 		browserOne.whoAmI();
 		System.out.println("\t\tBROWSER 2");
-		String[] history = {"zoho.com","whatsapp.com","instagram.com"};
-		Browser browserTwo = new Firefox(history);
+		Browser browserTwo = new Firefox();
 		browserTwo.whoAmI();
 		
 		
@@ -42,29 +41,23 @@ public class TestClass {
 		Browser tabFour = new GoogleChrome();
 		Browser tabFive = new GoogleChrome();
 		Browser[] allBrowsers = new Browser[] {tabOne,tabTwo,tabThree,tabFour,tabFive};
-		int length = allBrowsers.length;
-		int countChromeTabs = 0;
-		for(int i =0;i<length;i++) {
-			if(allBrowsers[i] instanceof GoogleChrome) {
-				countChromeTabs+=1;
-			}
-		}
-		System.out.println("\nNo. of Google Chrome Tabs : "+countChromeTabs);
-		System.out.println("No. of Opened Tabs : "+br.getCountTabsOpened(allBrowsers));
+		
+		System.out.println("\nNo. of Google Chrome Tabs : "+browserOne.getCountOfTabsOpened(allBrowsers));
+		System.out.println("No. of Opened Tabs : "+br.getCountOfTabsOpened(allBrowsers));
 		
 		//Step 6: to add an interface for Firefox
 		System.out.println("\n\t\tFIREFOX BROWSER");
-		Browser browser= new Firefox();
-		Firefox browser1 = (Firefox) browser;
-		browser1.addContainer("facebookContainer");
-		browser1.addContainer("Mails"); 
-		browser1.addContainer("PrivateBrowsing");
+		Firefox browser= new Firefox();
 		
-		String[] containers = browser1.viewAllContainers();
+		browser.addContainer("facebookContainer");
+		browser.addContainer("Mails"); 
+		browser.addContainer("PrivateBrowsing");
+		
+		String[] containers = browser.viewAllContainers();
 		System.out.println("Container after adding");
 		System.out.println(Arrays.toString(containers));
-		browser1.leaveContainer("PrivateBrowsing"); 
-		containers = browser1.viewAllContainers(); 
+		browser.leaveContainer("PrivateBrowsing"); 
+		containers = browser.viewAllContainers(); 
 		System.out.println("Container after deleting");
 		System.out.println(Arrays.toString(containers));
 	}
