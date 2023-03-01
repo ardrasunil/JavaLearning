@@ -26,8 +26,9 @@ StringBuilder s7 = s5.append(s6); //String 3 to store the result
 System.out.println(s7);
 
 //4.Using format() specifiers
-String s8 = String.format("%s%s", s2,s3);
+String s8 = String.format("%s %s", s2,s3);
 System.out.println(s8);
+System.out.println();
 
 //5.Using String.join()
 //first the separator
