@@ -36,6 +36,9 @@ public static void main(String[] args) {
 	
 	String s3 = "eldho";
 	System.out.println(s3.indexOf("ldh"));
+	
+	
+	
 	}
 
 }
