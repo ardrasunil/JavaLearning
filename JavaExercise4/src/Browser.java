@@ -15,7 +15,7 @@ public class Browser {
 		 //if found string to store
 		 String foundUrl = null;
 		 //loop to check if already visited url or not
-		 if(this.visits.length>0)
+		 //if(this.visits.length>0)
 			 for(String str : this.visits)
 			 {
 				 { 	index += 1;
