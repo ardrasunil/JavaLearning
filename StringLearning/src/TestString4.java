@@ -20,7 +20,7 @@ public static void main(String[] args)
 		int count = 0;
 		for(String str:visits)
 		{ count += 1;
-			if(str.substring(0,len).equals(s))
+			if(str.substring(0,str.length()-4).equals(s))
 			{
 				flag = true;
 				k = str;
