@@ -15,12 +15,12 @@ public static void main(String[] args)
 	{
 		System.out.println("enter the page you have visited");
 		String s = sc.next();
-		int len = s.length();
+		
 		boolean flag = false;
 		int count = 0;
 		for(String str:visits)
 		{ count += 1;
-			if(str.substring(0,len).equals(s))
+			if(str.substring(0,str.length()-4).equals(s))
 			{
 				flag = true;
 				k = str;
@@ -53,7 +53,7 @@ public static void main(String[] args)
 		}
 		
 		//System.out.println("Do you want to browse more(true/false)");
-		//isContinue = sc.nextBoolean();
+		isContinue = sc.nextBoolean();
 		}
 
 
