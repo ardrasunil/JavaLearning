@@ -52,8 +52,8 @@ public static void main(String[] args)
 			System.out.println(str);
 		}
 		
-		System.out.println("Do you want to browse more(true/false)");
-		isContinue = sc.nextBoolean();
+		//System.out.println("Do you want to browse more(true/false)");
+		//isContinue = sc.nextBoolean();
 		}
 
 
