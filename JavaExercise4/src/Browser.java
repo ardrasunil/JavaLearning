@@ -38,15 +38,11 @@ public class Browser {
 		 }
 		 else
 		 {
-			 int lenVisits = visits.length;
-			 //System.out.println(lenVisits);
 			 
 			 //creating temp array
-			 String[] tempVisits= new String[lenVisits+1];
-			 for(int i =0;i<lenVisits;i++) {
-				tempVisits[i]=visits[i];
-			 }
-			 tempVisits[lenVisits]=url.concat(" ## 1");
+			 String[] tempVisits= new String[visits.length+1];
+			 System.arraycopy(visits, 0, tempVisits, 0, visits.length);
+			 tempVisits[visits.length]=url.concat(" ## 1");
 			 visits=tempVisits;
 		 }
 	 }
