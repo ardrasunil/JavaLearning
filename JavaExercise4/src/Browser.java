@@ -16,27 +16,25 @@ public class Browser {
 		 String foundUrl = null;
 		 //loop to check if already visited url or not
 		 if(this.visits.length>0)
-			 for(String str : this.visits) {
-				 { index += 1;
-					if(str.substring(0,str.length()-5).equals(url))
-					{
-						found = true;
-						foundUrl = str;
-						break;
-					}
+			 for(String str : this.visits)
+			 {
+				 { 	index += 1;
+				 	String[] splitString1 = str.split(" ## ");
+				 	if(splitString1[0].equals(url)) {
+				 		found = true;
+				 		foundUrl = str;
+				 		break;
+				 	}
 				}
 			 }
 	 
 		 if(found) {
 			 //stores the present url in visits string
-			 int lenUrl = foundUrl.length();
-			 //get the visit count from string
-			 String visitCount = foundUrl.substring(foundUrl.length()-1);
-			 //increment the current count
-			 int newCount = Integer.parseInt(visitCount) + 1;
-			 //updating
-			 String newStr = foundUrl.substring(0,foundUrl.length()-1);
-			 visits[index-1]= newStr.concat(String.valueOf(newCount));
+			 String[] splitString2 = foundUrl.split(" ## ");
+			 int presentCount = Integer.parseInt(splitString2[1]);
+			 visits[index-1]= splitString2[0]+" ## "+String.valueOf(presentCount+1);
+			 
+			 
 		 }
 		 else
 		 {
