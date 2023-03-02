@@ -15,7 +15,7 @@ public static void main(String[] args)
 	{
 		System.out.println("enter the page you have visited");
 		String s = sc.next();
-		int len = s.length();
+		
 		boolean flag = false;
 		int count = 0;
 		for(String str:visits)
