@@ -16,9 +16,8 @@ public class Browser {
 		 String foundUrl = null;
 		 //loop to check if already visited url or not
 		 //if(this.visits.length>0)
-			 for(String str : this.visits)
-			 {
-				 { 	index += 1;
+		 for(String str : this.visits)
+				{ 	index += 1;
 				 	String[] splitString1 = str.split(" ## ");
 				 	if(splitString1[0].equals(url)) {
 				 		found = true;
@@ -26,7 +25,7 @@ public class Browser {
 				 		break;
 				 	}
 				}
-			 }
+			 
 	 
 		 if(found) {
 			 //stores the present url in visits string
@@ -49,6 +48,7 @@ public class Browser {
 	 
 	 // to display the visits
 	 void dispVisits() {
+		 System.out.println("\t Pages visited with count");
 		 for(String str:visits) {
 			 System.out.println(str);
 		 }
