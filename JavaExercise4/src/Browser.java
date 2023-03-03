@@ -17,12 +17,12 @@ public class Browser {
 		 //loop to check if already visited url or not
 		 //if(this.visits.length>0)
 		 String[] splitString1 ;
-		 for(String str : this.visits)
+		 for(String visitedUrl : this.visits)
 				{ 	index += 1;
-				 	splitString1 = str.split(" ## ");
+				 	splitString1 = visitedUrl.split(" ## ");
 				 	if(splitString1[0].equals(url)) {
 				 		found = true;
-				 		foundUrl = str;
+				 		foundUrl = visitedUrl;
 				 		break;
 				 	}
 				}
