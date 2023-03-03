@@ -10,12 +10,14 @@ public class Browser {
 		 
 		 //to check if url is already present
 		 boolean found = false;
+		 
 		 //to keep track of the index if url already exists
 		 int index = 0;
+		 
 		 //if found string to store
 		 String foundUrl = null;
+		 
 		 //loop to check if already visited url or not
-		 //if(this.visits.length>0)
 		 String[] splitString1 ;
 		 for(String visitedUrl : this.visits)
 				{ 	index += 1;
@@ -28,13 +30,12 @@ public class Browser {
 				}
 			 
 	 
-		 if(found) {
+		 if(found) 
+		 {
 			 //stores the present url in visits string
 			 splitString1 = foundUrl.split(" ## ");
 			 int presentCount = Integer.parseInt(splitString1[1]);
 			 visits[index-1]= splitString1[0]+" ## "+String.valueOf(presentCount+1);
-			 
-			 
 		 }
 		 else
 		 {
@@ -45,6 +46,8 @@ public class Browser {
 			 tempVisits[visits.length]=url.concat(" ## 1");
 			 visits=tempVisits;
 		 }
+		 
+
 	 }
 	 
 	 // to display the visits
