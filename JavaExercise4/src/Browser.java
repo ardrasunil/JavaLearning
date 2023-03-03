@@ -16,9 +16,10 @@ public class Browser {
 		 String foundUrl = null;
 		 //loop to check if already visited url or not
 		 //if(this.visits.length>0)
+		 String[] splitString1 ;
 		 for(String str : this.visits)
 				{ 	index += 1;
-				 	String[] splitString1 = str.split(" ## ");
+				 	splitString1 = str.split(" ## ");
 				 	if(splitString1[0].equals(url)) {
 				 		found = true;
 				 		foundUrl = str;
@@ -29,9 +30,9 @@ public class Browser {
 	 
 		 if(found) {
 			 //stores the present url in visits string
-			 String[] splitString2 = foundUrl.split(" ## ");
-			 int presentCount = Integer.parseInt(splitString2[1]);
-			 visits[index-1]= splitString2[0]+" ## "+String.valueOf(presentCount+1);
+			 splitString1 = foundUrl.split(" ## ");
+			 int presentCount = Integer.parseInt(splitString1[1]);
+			 visits[index-1]= splitString1[0]+" ## "+String.valueOf(presentCount+1);
 			 
 			 
 		 }
@@ -60,14 +61,16 @@ public class Browser {
 		 
 		 Scanner sc = new Scanner(System.in);
 		 Browser b = new Browser();
-		 boolean isContinue = true;
-		 while(isContinue) {
+		 while(true) {
 			 
-			 System.out.println("enter the url you visited");
+			 System.out.println("enter the url you visited or enter exit");
 			 String url = sc.next();
+			 if(url.equals("exit")) {
+				 break;
+			 }
 			 b.setVisits(url);
 			 b.dispVisits();
-		 
+			 
 		 } 
 		 
 		 
