@@ -1,4 +1,5 @@
 //trying with StringBuilder
+import java.util.Scanner;
 
 public class Browser2 {
     StringBuilder visitedPages;
@@ -7,7 +8,7 @@ public class Browser2 {
         visitedPages = new StringBuilder();
     }
     
-    public void visitPage(String url) {
+    public void setVisits(String url) {
         int count = 1;
         int firstIndex = visitedPages.lastIndexOf(url);
         String[] splitString ;
@@ -31,24 +32,25 @@ public class Browser2 {
     
     
     
-    public String getHistory() {
+    public String dispVisits() {
         return visitedPages.toString();
     }
     
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
+		Scanner sc = new Scanner(System.in);
         Browser2 b = new Browser2();
-        b.visitPage("www.fb.com");
-        System.out.println(b.getHistory());
-        b.visitPage("www.google.com");
-        System.out.println(b.getHistory());
-        b.visitPage("www.fb.com");
-        System.out.println(b.getHistory());
-        b.visitPage("www.fb.com");
-        System.out.println(b.getHistory());
-        for(int i = 0;i<32;i++) {
-        b.visitPage("www.google.com");
-        }
-        b.visitPage("www.fb.com");
-        System.out.println(b.getHistory());
-    }
+        
+        while(true) {
+			 
+			 System.out.println("enter the url you visited or enter exit");
+			 String url = sc.next();
+			 if(url.equals("exit")) {
+				 break;
+			 }
+			 b.setVisits(url);
+			 System.out.println(b.dispVisits());
+			 
+		 } 
+	}
 }
