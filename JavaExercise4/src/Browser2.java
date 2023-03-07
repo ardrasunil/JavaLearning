@@ -8,6 +8,7 @@ public class Browser2 {
         visitedPages = new StringBuilder();
     }
     
+    //to set the visit page details
     public void setVisits(String url) {
         int count = 1;
         int firstIndex = visitedPages.lastIndexOf(url);
@@ -31,7 +32,7 @@ public class Browser2 {
     }
     
     
-    
+    //to get the visit page details
     public String dispVisits() {
         return visitedPages.toString();
     }
