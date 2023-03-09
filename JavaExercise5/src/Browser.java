@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Browser {
 	
 	//bookmark as member inner class
-	class Bookmarks{
+	private class Bookmarks{
 		
 		private ArrayList<String> bookmarkedUrls ;
 		
@@ -29,8 +29,10 @@ public class Browser {
 		
 	}
 	
-	interface Shortcut{
-		void dispSortcut();
+	class Shortcut{
+		void dispSortcut() {
+			System.out.println("SHORTCUTS");
+		}
 	}
 	
 	//static nested class history
@@ -82,11 +84,11 @@ public class Browser {
 		
 		
 		//Anonymous class
-		Browser.Shortcut s = new Browser.Shortcut() {
+		Shortcut s = brave.new Shortcut() {
 			
 			@Override
 			public void dispSortcut() {
-				System.out.println("SHORTCUTS");
+				super.dispSortcut();
 				System.out.println("Open new window");
 				System.out.println("Open new tab");
 				System.out.println("Close current tab");
