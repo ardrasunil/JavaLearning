@@ -6,6 +6,7 @@ public class Example1 {
 			//arithmeticException
 			try {
 				int number = 100/0;
+				System.out.println("This statement will be skipped");
 			}
 			catch(ArithmeticException e)
 			{
