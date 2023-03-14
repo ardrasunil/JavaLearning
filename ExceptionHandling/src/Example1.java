@@ -47,7 +47,7 @@ public class Example1 {
 				System.out.println(e);
 			}
 			
-			
+			//
 			System.out.println("Exception handled and continued");
 		}
 }
