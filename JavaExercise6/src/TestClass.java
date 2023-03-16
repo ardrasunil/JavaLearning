@@ -10,16 +10,17 @@ public class TestClass {
 		int steps;
 		int position;
 		
+		
 		//object declaration
 		System.out.println("Enter the homepage");
 		String homepage = sc.next();
 		BrowserHistory tab = new BrowserHistory(homepage);
 		
 		
-		System.out.println("Start Browsing");
+		
 		while(more) {
 			
-			System.out.println();
+			System.out.println("\n\tOPTIONS");
 			System.out.println("1.Visit");
 			System.out.println("2.Back");
 			System.out.println("3.Forward");
@@ -48,7 +49,7 @@ public class TestClass {
 					  	try {
 					  		System.out.println(tab.back(steps));
 					  	}
-					  	catch(NoHistoryFound e) {
+					  	catch(NoHistoryFoundException e) {
 					  		System.out.println(e);
 					  	}
 					  	break;
@@ -60,7 +61,7 @@ public class TestClass {
 		  				try {
 		  					System.out.println(tab.forward(steps));
 		  				} 
-		  				catch (NoHistoryFound e) {
+		  				catch (NoHistoryFoundException e) {
 		  					System.out.println(e);
 		  				}
 		  				break;		
@@ -72,7 +73,7 @@ public class TestClass {
 							System.out.println(tab.getURL(position));
 						}
 						catch(IndexOutOfBoundsException e) {
-							System.out.println("Invalid Position" + e);
+							System.out.println("Invalid Position :" + e);
 						}
 						catch(InvalidPositionException e) {
 							System.out.println(e);

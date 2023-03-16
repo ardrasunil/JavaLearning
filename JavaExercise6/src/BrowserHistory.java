@@ -29,18 +29,18 @@ class BrowserHistory{
 	}
 
 	//Move steps back in history and return the url in that position in history.
-	public String back(int step) throws NoHistoryFound{
+	public String back(int step) throws NoHistoryFoundException{
 			if(step>currentPosition) {
-				throw new NoHistoryFound();
+				throw new NoHistoryFoundException();
 			}
 			currentPosition -= step;
 			return history.get(currentPosition);
 	}
 
 	//Move steps forward in history and return the url in that position in history.
-	String forward(int step) throws NoHistoryFound {
+	String forward(int step) throws NoHistoryFoundException {
 			if(step>(history.size()-1-currentPosition)) {
-				throw new NoHistoryFound();
+				throw new NoHistoryFoundException();
 			}
 			currentPosition += step;
 			return history.get(currentPosition);
