@@ -9,6 +9,7 @@ public class LinkedHashSet1 {
 		colours.add("black");
 		colours.add("blue");
 		colours.add("white");
+		colours.add(null);
 		System.out.println(colours);
 		colours.remove("blue");
 		colours.remove("red");
