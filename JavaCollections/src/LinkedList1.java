@@ -3,7 +3,7 @@ import java.util.LinkedList;
 
 public class LinkedList1 {
 	public static void main(String[] args) {
-		LinkedList<String> names = new LinkedList<String>();
+		LinkedList<String> names = new LinkedList<>();
 		names.add("Ravi");  
 		names.add("Vijay");  
 		names.add("Ravi");  
