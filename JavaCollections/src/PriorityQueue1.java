@@ -8,6 +8,7 @@ public class PriorityQueue1 {
 		queue.add("Vijay Raj");  
 		queue.add("JaiShankar");  
 		queue.add("Raj"); 
+		//queue.add(null);
 		
 		//retrieve head
 		System.out.println("head:"+queue.element());  

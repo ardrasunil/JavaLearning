@@ -29,14 +29,5 @@ public class ArrayDeque1
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-
 	}
 }
