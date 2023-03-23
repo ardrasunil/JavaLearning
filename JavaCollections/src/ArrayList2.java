@@ -17,6 +17,7 @@ public class ArrayList2 {
 		name.addAll(name2);
 		name.add("Ardra");
 		
+		
 		//using iterator traversing
 		Iterator<String> itr = name.iterator();
 		while(itr.hasNext()) {

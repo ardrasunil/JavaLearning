@@ -13,6 +13,7 @@ public class TreeSet2 {
 		veg2.add("cabbage");
 		System.out.println(veg1);//sorted list ascending
 		System.out.println(veg1.ceiling("tom"));//prints tomato
+		System.out.println(veg1.ceiling("pot"));
 		veg1.addAll(veg2);
 		System.out.println(veg1);
 		Iterator itr = veg1.descendingIterator();
@@ -21,6 +22,7 @@ public class TreeSet2 {
 		}
 		System.out.println(veg1.descendingSet());
 		System.out.println(veg1.floor("tomat"));
+		System.out.println(veg1.floor("potat"));
 		System.out.println(veg1.headSet("peas",true));
 		System.out.println(veg1.tailSet("peas",true));
 		System.out.println(veg1.subSet("onion",true, "potato",true));

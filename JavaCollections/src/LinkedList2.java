@@ -12,6 +12,7 @@ public class LinkedList2 {
 		fruits1.add("Orange");
 		fruits1.add("Apple");
 		fruits1.add("Banana");
+		fruits1.add(null);
 		System.out.println(fruits1);
 		
 		//adding elem to list2
