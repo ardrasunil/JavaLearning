@@ -3,6 +3,7 @@ import java.lang.Class;
 import java.lang.reflect.*;
 class Student1 {
  private String rollNo;
+ public String StudentName;
 }
  
  
@@ -12,6 +13,19 @@ public static void main(String[] args) {
       Student1 student = new Student1();
       // get the object for class Student in a Class.
       Class obj = student.getClass();      // access the private field
+      
+      Field student_field = obj.getField("StudentName");
+      System.out.println("Details of StudentName class field:");
+      // set the value of field
+       student_field.set(student, "Lacey");
+       
+      // get the access modifier of StudentName
+       int mod1 = student_field.getModifiers();
+       String modifier1 = Modifier.toString(mod1);
+       System.out.println("StudentName Modifier::" + modifier1);
+      // get the value of field by converting in String
+       String typeValue = (String)student_field.get(student);
+       System.out.println("StudentName Value::" + typeValue);
       Field field2 = obj.getDeclaredField("rollNo");
      // make the private field accessible
       field2.setAccessible(true);
