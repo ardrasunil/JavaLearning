@@ -9,7 +9,7 @@ public class Example7 {
         //data.writeInt(65);  
         data.writeChar(65);
         data.writeChars("Hello");
-        //data.flush();  
+        data.flush();  
         data.close();  
         System.out.println("Succcess...");  
     }  
