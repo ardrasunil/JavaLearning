@@ -31,14 +31,14 @@ public class Main {
 							DeleteThread th2 = new DeleteThread(b);
 							
 							th1.start();
-							
+							th2.start();
 							try {
-								th1.join();
+								th2.join();
 							} catch (InterruptedException e) {
 								
 								e.printStackTrace();
 							}
-							th2.start();
+							
 							break;
 			
 			case "Exit" :	more = false;

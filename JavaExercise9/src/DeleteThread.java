@@ -15,7 +15,7 @@ public class DeleteThread extends Thread{
     	try {
  
             browser.deleteHistory();
-            System.out.println(browser.readHistory());
+            //System.out.println(browser.readHistory());
             
         } catch (Exception e) {
             System.err.println("Error in Reading " + e.getMessage());
